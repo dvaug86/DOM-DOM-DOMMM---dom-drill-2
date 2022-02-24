@@ -1,0 +1,8 @@
+.blackSQ{
+    display:flex;
+    flex-flow: row wrap;
+    width: 50px;
+    margin: 20px;
+    background-color: black;
+}
+
