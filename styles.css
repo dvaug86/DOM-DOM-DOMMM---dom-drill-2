@@ -1,8 +1,19 @@
 .blackSQ{
-    display:flex;
-    flex-flow: row wrap;
-    width: 50px;
-    margin: 20px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
     background-color: black;
+    font-size: 25px;
+    color: white;
+}
+
+.sq-Container{
+    display: flex;
+    flex-flow: row wrap; 
+    
 }
 
