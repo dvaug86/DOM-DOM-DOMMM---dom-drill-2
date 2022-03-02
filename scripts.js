@@ -25,12 +25,39 @@ document.addEventListener("DOMContentLoaded", function () {
         divSQ.className = 'blackSQ'; //allows work to be done in css
         let bClickText = document.createTextNode(bClick); //this provids a visual reference to the id
         divSQ.id = bClick; //allows each square to have an id starting at 1
-         sqContainer.appendChild(divSQ); //Attaches this child to square container
+        sqContainer.appendChild(divSQ); //Attaches this child to square container
 
+//shows id when mouse hovers over block     
         divSQ.addEventListener('mouseover', () => divSQ.appendChild(bClickText));
         divSQ.addEventListener('mouseout', () => divSQ.removeChild(bClickText));
 
+//changes square to random color
+        divSQ.addEventListener('click', () => {
+            const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+            divSQ.style.backgroundColor = rndCol;
+        });
+
+//removes squares pending on id# and double clicked
+        divSQ.addEventListener('dblclick', ()=> {
+             if (bClick % 2 === 0){
+                 if (divSQ === null){
+                     alert('Nothing to be removed!');
+                 } else{
+                     divSQ.nextSibling.remove();
+                 }
+             }
+        });
+    
     });
+
+
+    function random(num) {
+        return Math.floor(Math.random() * (num + 1));
+    };
+
 });
+
+
+
 
 
